@@ -2,7 +2,7 @@ package com.photomentor.controller;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.photomentor.common.Result;
-import com.photomentor.entity.Score;
+import com.photomentor.dto.ScoreVO;
 import com.photomentor.service.ScoringService;
 import org.springframework.web.bind.annotation.*;
 
@@ -26,12 +26,12 @@ public class HistoryController {
             @RequestParam(defaultValue = "10") int size) {
         try {
             Long userId = 1L;
-            Page<Score> scorePage = scoringService.getHistory(userId, page, size);
-            
+            Page<ScoreVO> scorePage = scoringService.getHistory(userId, page, size);
+
             Map<String, Object> result = new HashMap<>();
             result.put("items", scorePage.getRecords());
             result.put("total", scorePage.getTotal());
-            
+
             return Result.success(result);
         } catch (Exception e) {
             return Result.error("获取历史记录失败: " + e.getMessage());

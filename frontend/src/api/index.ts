@@ -27,6 +27,7 @@ export interface Score {
   suggestions: string
   analysis: string
   createdAt: string
+  photoUrl?: string
 }
 
 export interface ShootingAdvice {
