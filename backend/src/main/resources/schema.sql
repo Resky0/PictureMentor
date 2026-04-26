@@ -20,6 +20,7 @@ CREATE TABLE IF NOT EXISTS photo (
     user_id BIGINT NOT NULL,
     url VARCHAR(255) NOT NULL,
     thumbnail_url VARCHAR(255),
+    base64_data TEXT,
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
     INDEX idx_user_id (user_id),
     INDEX idx_created_at (created_at)

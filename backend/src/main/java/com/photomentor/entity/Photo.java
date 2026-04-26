@@ -18,5 +18,7 @@ public class Photo {
     
     private String thumbnailUrl;
     
+    private String base64Data;
+    
     private LocalDateTime createdAt;
 }
