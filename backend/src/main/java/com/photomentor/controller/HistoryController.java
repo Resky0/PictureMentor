@@ -2,8 +2,9 @@ package com.photomentor.controller;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.photomentor.common.Result;
-import com.photomentor.dto.ScoreVO;
+import com.photomentor.model.vo.ScoreVO;
 import com.photomentor.service.ScoringService;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
@@ -23,9 +24,10 @@ public class HistoryController {
     @GetMapping
     public Result<Map<String, Object>> getHistory(
             @RequestParam(defaultValue = "1") int page,
-            @RequestParam(defaultValue = "10") int size) {
+            @RequestParam(defaultValue = "10") int size,
+            HttpServletRequest request) {
         try {
-            Long userId = 1L;
+            Long userId = (Long) request.getAttribute("userId");
             Page<ScoreVO> scorePage = scoringService.getHistory(userId, page, size);
 
             Map<String, Object> result = new HashMap<>();

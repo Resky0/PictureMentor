@@ -1,4 +1,4 @@
-package com.photomentor.entity;
+package com.photomentor.model.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -7,18 +7,16 @@ import lombok.Data;
 import java.time.LocalDateTime;
 
 @Data
-@TableName("user")
-public class User {
+@TableName("photo")
+public class Photo {
     @TableId(type = IdType.AUTO)
     private Long id;
     
-    private String username;
+    private Long userId;
     
-    private String avatar;
+    private String url;
     
-    private String email;
+    private String thumbnailUrl;
     
     private LocalDateTime createdAt;
-    
-    private LocalDateTime updatedAt;
 }

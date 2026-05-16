@@ -1,7 +1,7 @@
 package com.photomentor.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.photomentor.entity.User;
+import com.photomentor.model.entity.User;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper

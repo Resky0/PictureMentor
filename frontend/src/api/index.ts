@@ -75,6 +75,12 @@ export const guideApi = {
 }
 
 export const userApi = {
+  login: (username: string, password: string) => {
+    return request.post<ApiResponse<{ token: string; user: User }>>('/user/login', { username, password })
+  },
+  register: (username: string, password: string) => {
+    return request.post<ApiResponse<{ token: string; user: User }>>('/user/register', { username, password })
+  },
   getProfile: () => {
     return request.get<ApiResponse<User>>('/user/profile')
   },

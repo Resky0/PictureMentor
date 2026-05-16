@@ -1,14 +1,13 @@
 package com.photomentor.controller;
 
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.photomentor.common.Result;
-import com.photomentor.dto.ScoreRequest;
-import com.photomentor.entity.Score;
+import com.photomentor.model.dto.ScoreRequest;
+import com.photomentor.model.entity.Score;
 import com.photomentor.service.ScoringService;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.HashMap;
-import java.util.Map;
+
 
 @RestController
 @RequestMapping("/api/scoring")
@@ -22,9 +21,9 @@ public class ScoringController {
     }
 
     @PostMapping("/analyze")
-    public Result<Score> analyze(@RequestBody ScoreRequest request) {
+    public Result<Score> analyze(@RequestBody ScoreRequest request, HttpServletRequest httpServletRequest) {
         try {
-            Long userId = 1L;
+            Long userId = (Long) httpServletRequest.getAttribute("userId");
             Score score = scoringService.analyzeAndSave(request.getPhotoId(), userId);
             return Result.success(score);
         } catch (Exception e) {

@@ -1,4 +1,4 @@
-package com.photomentor.dto;
+package com.photomentor.model.dto;
 
 import lombok.Data;
 

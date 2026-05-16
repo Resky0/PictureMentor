@@ -1,7 +1,7 @@
 package com.photomentor.service;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.photomentor.entity.Photo;
+import com.photomentor.model.entity.Photo;
 import com.photomentor.mapper.PhotoMapper;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;

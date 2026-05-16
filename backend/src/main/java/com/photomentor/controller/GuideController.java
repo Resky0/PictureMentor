@@ -1,8 +1,8 @@
 package com.photomentor.controller;
 
 import com.photomentor.common.Result;
-import com.photomentor.dto.ShootingAdviceRequest;
-import com.photomentor.dto.ShootingAdviceResponse;
+import com.photomentor.model.dto.ShootingAdviceRequest;
+import com.photomentor.model.vo.ShootingAdviceResponse;
 import com.photomentor.service.AIAnalysisService;
 import org.springframework.web.bind.annotation.*;
 

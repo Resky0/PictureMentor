@@ -1,4 +1,4 @@
-package com.photomentor.dto;
+package com.photomentor.model.vo;
 
 import lombok.Data;
 import java.util.List;

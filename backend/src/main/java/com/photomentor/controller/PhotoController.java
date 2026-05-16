@@ -1,8 +1,9 @@
 package com.photomentor.controller;
 
 import com.photomentor.common.Result;
-import com.photomentor.entity.Photo;
+import com.photomentor.model.entity.Photo;
 import com.photomentor.service.PhotoService;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -21,9 +22,9 @@ public class PhotoController {
     }
 
     @PostMapping("/upload")
-    public Result<Map<String, Object>> uploadPhoto(@RequestParam("file") MultipartFile file) {
+    public Result<Map<String, Object>> uploadPhoto(@RequestParam("file") MultipartFile file, HttpServletRequest request) {
         try {
-            Long userId = 1L;
+            Long userId = (Long) request.getAttribute("userId");
             Photo photo = photoService.uploadPhoto(file, userId);
             
             Map<String, Object> result = new HashMap<>();
