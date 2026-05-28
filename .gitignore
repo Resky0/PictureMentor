@@ -1,0 +1,46 @@
+### Java ###
+*.class
+*.jar
+*.war
+*.ear
+
+### Maven ###
+target/
+!.mvn/wrapper/maven-wrapper.jar
+
+### IDE ###
+.idea/
+*.iml
+*.iws
+*.ipr
+.vscode/
+.settings/
+.project
+.classpath
+.factorypath
+
+### Logs ###
+*.log
+logs/
+
+### OS ###
+.DS_Store
+Thumbs.db
+desktop.ini
+
+### Local Config ###
+backend/src/main/resources/application-local.yml
+
+### Uploads ###
+uploads/
+!uploads/.gitkeep
+
+### Frontend ###
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+### Env ###
+.env
+.env.local
+.env.*.local

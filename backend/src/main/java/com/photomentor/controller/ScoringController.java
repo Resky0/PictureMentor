@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/scoring")
-@CrossOrigin(origins = "*")
 public class ScoringController {
 
     private final ScoringService scoringService;

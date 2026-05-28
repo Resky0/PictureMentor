@@ -12,7 +12,6 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/history")
-@CrossOrigin(origins = "*")
 public class HistoryController {
 
     private final ScoringService scoringService;

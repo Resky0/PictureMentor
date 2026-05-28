@@ -3,24 +3,26 @@ server:
   address: 0.0.0.0
 
 spring:
+  profiles:
+    active: local
   application:
     name: photo-mentor
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/photo_mentor?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
     username: root
-    password: 1234
+    password: your_password
   servlet:
     multipart:
       max-file-size: 10MB
       max-request-size: 10MB
   ai:
     openai:
-      api-key: ${DASHSCOPE_API_KEY:YOUR-API-KEY}
+      api-key: your_api-key
       base-url: https://dashscope.aliyuncs.com/compatible-mode
       chat:
         options:
-          model: qwen-image-2.0-pro-2026-03-03
+          model: glm-5.1
           temperature: 0.7
 
 mybatis-plus:

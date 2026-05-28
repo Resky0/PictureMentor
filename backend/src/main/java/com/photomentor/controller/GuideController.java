@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/guide")
-@CrossOrigin(origins = "*")
 public class GuideController {
 
     private final AIAnalysisService aiAnalysisService;
